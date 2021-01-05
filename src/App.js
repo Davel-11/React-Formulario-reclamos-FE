@@ -1,28 +1,23 @@
-import  React, { useState } from 'react';
+import  React, { Component } from 'react';
 import './App.css';
 import Person from './Person/Person';
 
 
 
-const App = props => {
+class App extends Component {
 
-  const [personState, setPersonState] =  useState({
+  state =  {
     persons: [
       { name: 'Chris', age: 20 },
       { name: 'Saul', age: 210 },
       { name: 'Ronaldo', age: 30 }
     ],
-    otherValue: 'some value'
-  });
+    otherState: 'some value'
+  };
 
-  const [otherState, setOtherState] =  useState({otherValue: 'some value'});
-
-  // console.log('personState ', personState);
-  // console.log('otherState ', otherState);
-
-  const switchNames = (newName) => {
+  switchNames = (newName) => {
     
-    setPersonState({
+    this.setState({
       persons: [
         { name: newName, age: 20 },
         { name: 'SaulX', age: 210 },
@@ -32,9 +27,9 @@ const App = props => {
 
   }
 
-  const nameChangeHandler = (event) =>  {
+  nameChangeHandler = (event) =>  {
 
-    setPersonState({
+    this.setState({
       persons: [
         { name: 'ChrisXX', age: 20 },
         { name: event.target.value, age: 210 },
@@ -44,26 +39,30 @@ const App = props => {
 
   }
   
+  render() { 
+    return(
 
-  return(
-    <div className="App">
-        <h1>Hi, Mi firsty app</h1>
+      <div className="App">
+        
+          <h1>Hi, Mi firsty app</h1>
+  
+          <button onClick={ () => this.switchNames('Performance Chris New Name ') } >click me! </button>
+  
+          <Person name={this.state.persons[0].name} age="30" ></Person>
+  
+          <Person 
+            name={this.state.persons[1].name} 
+            age="25"
+            click={this.switchNames.bind(this, 'use Binding')}
+            changed={this.nameChangeHandler} >
+            My Hobies: Racing 
+          </Person>
+  
+          <Person name={this.state.persons[2].name} age="16"></Person>
 
-        <button onClick={ () => switchNames('Performance Chris New Name ') } >click me! </button>
-
-        <Person name={personState.persons[0].name} age="30" ></Person>
-
-        <Person 
-          name={personState.persons[1].name} 
-          age="25"
-          click={switchNames.bind(this, 'use Binding')}
-          changed={nameChangeHandler} >
-          My Hobies: Racing 
-        </Person>
-
-        <Person name={personState.persons[2].name} age="16"></Person>
-    </div>
-  )
+      </div>
+    )
+  }
 
 }
 
