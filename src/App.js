@@ -1,6 +1,8 @@
 import  React, { useState } from 'react';
 import './App.css';
-import Person from './Person/Person'
+import Person from './Person/Person';
+
+
 
 const App = props => {
 
@@ -15,8 +17,8 @@ const App = props => {
 
   const [otherState, setOtherState] =  useState({otherValue: 'some value'});
 
-  console.log('personState ', personState);
-  console.log('otherState ', otherState);
+  // console.log('personState ', personState);
+  // console.log('otherState ', otherState);
 
   const switchNames = (newName) => {
     
@@ -30,6 +32,19 @@ const App = props => {
 
   }
 
+  const nameChangeHandler = (event) =>  {
+
+    setPersonState({
+      persons: [
+        { name: 'ChrisXX', age: 20 },
+        { name: event.target.value, age: 210 },
+        { name: 'RonaldoX', age: 30 }
+      ]
+    });
+
+  }
+  
+
   return(
     <div className="App">
         <h1>Hi, Mi firsty app</h1>
@@ -41,7 +56,8 @@ const App = props => {
         <Person 
           name={personState.persons[1].name} 
           age="25"
-          click={switchNames.bind(this, 'use Binding')}> 
+          click={switchNames.bind(this, 'use Binding')}
+          changed={nameChangeHandler} >
           My Hobies: Racing 
         </Person>
 
