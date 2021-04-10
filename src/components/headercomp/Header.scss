@@ -1,0 +1,44 @@
+.header-class {
+    border-bottom: solid #0CB7F2;
+
+    height: 100px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    
+    display: flex;
+
+    .logo {
+        width: 25%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+
+        background: url('../../assets/logo3.jpg');
+        background-size: 125px 100px;
+        background-position: center;
+        background-repeat: no-repeat;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+
+    ul {
+        width: 75%;
+        list-style-type: none;
+        display: flex;
+        justify-content: space-around;
+        li {
+            cursor: pointer;
+            opacity: 0.5;
+            text-transform: capitalize !important;
+            font-weight: bold;
+            &:hover {
+                color: rgb(145, 16, 16);
+            }
+        }
+    }
+}
