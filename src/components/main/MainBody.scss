@@ -6,5 +6,69 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    
+    overflow-y: auto;
+    overflow-x: auto;
+
+    h3 {
+        margin: 0;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .forma {
+        width: 400px;
+    }
+    
+    .input-type {
+        font-family: "Nunito";
+        width: 100%;
+        max-width: 100%;
+        height: 25px;
+        border-style: none;
+        border-bottom: 0.1rem solid rgb(150, 150, 150);
+        box-sizing: border-box;
+        padding: 0px 0px;
+
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        margin: 0px;
+        border-radius: 0px;
+
+        margin: 7px 0px;
+
+        &:focus {
+            border-style: 0;
+            border-bottom: 0.15rem solid #0CB7F2 !important;
+            outline: none;
+            box-sizing: border-box;
+        }
+    }
+
+    .customing-select {
+        position: relative;
+        border-bottom: 1.5px solid #0CB7F2;
+        width: 100%;
+        height: 25px;
+        margin: 17px 0px;
+        select {
+            padding: 0px;
+            font-family: "Nunito";
+            width: 100%;
+            background: white;
+            border: 0;
+            outline: none;
+            
+            font-style: normal;
+            font-size: 12px;
+            text-transform: capitalize;
+            cursor: pointer;
+
+        }
+        select[editable] > button { 
+            stroke: #f00 !important;
+        }
+    }
 
 }
