@@ -18,6 +18,12 @@
 
     .forma {
         width: 400px;
+        .forma-ht {
+            min-height: 475px;
+        }
+        .non-show {
+            display: none;
+        }
     }
     
     .input-type {
@@ -30,6 +36,7 @@
         box-sizing: border-box;
         padding: 0px 0px;
 
+        font-family: "Nunito";
         font-style: normal;
         font-weight: normal;
         font-size: 12px;
@@ -43,6 +50,23 @@
             border-bottom: 0.15rem solid #0CB7F2 !important;
             outline: none;
             box-sizing: border-box;
+        }
+    }
+
+    .input-text {
+        width: 100%;
+        max-width: 100%;
+        border: 0.1rem solid #0CB7F2 !important;
+
+        font-family: "Nunito";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+
+        &:focus {
+            border: 0.1rem solid #0CB7F2 !important;
+            outline: none;
+            
         }
     }
 
@@ -68,6 +92,41 @@
         }
         select[editable] > button { 
             stroke: #f00 !important;
+        }
+    }
+
+    .button-line {
+        margin-top: 15px;
+        width: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        .next {
+            background: #0CB7F2;
+            border-style: none;
+            outline: none;
+            font-family: "Nunito";
+            height: 40px;
+            width: 300px;
+            color: white;
+            &:hover {
+                cursor: pointer;
+                background: rgb(9, 144, 189);
+            }
+        }
+        .is-red {
+            margin-top: 15px;
+            background: rgb(145, 16, 16);
+            font-weight: bold;
+            &:hover {
+                cursor: pointer;
+                background: rgb(99, 10, 10);
+            }
+        }
+        
+        .button-red {
+
         }
     }
 

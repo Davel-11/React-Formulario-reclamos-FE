@@ -8,9 +8,9 @@ const HeaderComp = () => (
 
         <ul>
             <li>Incio</li>
+            <li>Reporteria</li>
             <li>Diseño de Sitio</li>
-            <li>Estudiante</li>
-            <li>Contacto</li>
+            <li>Alumno</li>
         </ul>
     </div>
 )
