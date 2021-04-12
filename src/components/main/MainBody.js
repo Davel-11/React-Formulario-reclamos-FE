@@ -539,23 +539,39 @@ const MainBody = () => {
     }
 
     const handleSubmit = () => {
-        console.log('handleSubmit');
 
-        console.log('name is ', name);
-        console.log('rsocial is ', rsocial);
-        console.log('nit is ', nit);
+        const postData = {
+            name: name,
+            ras_soc: rsocial,
+            nit: nit,
+            departamento: depValue,
+            municipio: muniSel,
+            address: dir,
+            office_phone: tel,
+            sucursal: suc,
+            invoice: factura,
+            date: fecha,
+            complain_text: complain,
+            request_text: sol,
+        }
 
-        console.log('depValue is ', depValue);
-        console.log('muniSel is ', muniSel);
-        console.log('dir is ', dir);
+        console.log('post Data is ', postData);
 
-        console.log('telefono is ', tel);
-        console.log('sucursar is ', suc);
+        setName('')
+        setRSocial('')
+        setNit('')
+        setDetValue(0)
+        setMuniSel(0)
+        setDir('')
+        setTel('')
+        setSuc(0)
+        setFacutra('')
+        setFecha('')
+        setComplain('')
+        setSol('')
 
-        console.log('factura is ', factura);
-        console.log('fecha is ', fecha);
-        console.log('complain is ', complain);
-        console.log('sol is ', sol);
+        setSectionOne(' ')
+        handleSections()
     }
 
     const [name, setName] = useState('')
@@ -642,12 +658,7 @@ const MainBody = () => {
                             <button className="next is-red" type="button" onClick={handleSubmit}>
                                 Enviar Queja
                             </button>
-                        ) : 
-                        (
-                            <button className="next is-red" type="button" onClick={handleSubmit}>
-                                Enviar Queja
-                            </button>
-                        )
+                        ) : null
                     }
                     
                 </div>

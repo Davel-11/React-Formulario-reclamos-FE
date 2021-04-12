@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom';
 import './Header.scss'
 
 const HeaderComp = () => (
@@ -7,10 +8,10 @@ const HeaderComp = () => (
         </div>
 
         <ul>
-            <li>Incio</li>
-            <li>Reporteria</li>
-            <li>Diseño de Sitio</li>
-            <li>Alumno</li>
+            <li><NavLink to="/">Inicio</NavLink></li>
+            <li><NavLink to="/reports">Reportes</NavLink></li>
+            <li><NavLink to="/site">Diseño de Sitio</NavLink></li>
+            <li><NavLink to="/student">Alumno</NavLink></li>
         </ul>
     </div>
 )

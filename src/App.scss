@@ -10,11 +10,12 @@
   width: 100vw;
   height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
 
   $width-info: 1000px;
   font-family: "Nunito";
-  color: rgb(49, 49, 49);
+  color: rgb(78, 78, 78);
 
   overflow-x: unset;
   overflow-y: unset;

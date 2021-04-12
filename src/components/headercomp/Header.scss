@@ -1,7 +1,7 @@
 .header-class {
     border-bottom: solid #0CB7F2;
 
-    height: 100px;
+    height: 80px;
     
     display: flex;
     justify-content: center;
@@ -18,7 +18,7 @@
         justify-content: center;
 
         background: url('../../assets/logo3.jpg');
-        background-size: 125px 100px;
+        background-size: 90px 75px;
         background-position: center;
         background-repeat: no-repeat;
         &:hover{
@@ -33,12 +33,25 @@
         justify-content: space-around;
         li {
             cursor: pointer;
-            opacity: 0.5;
             text-transform: capitalize !important;
             font-weight: bold;
-            &:hover {
-                color: rgb(145, 16, 16);
+            a {
+                text-decoration: none;
+                color: grey;
+                &:hover {
+                    color: rgb(83, 10, 10);
+                    text-decoration: underline;
+                    opacity: 0.7;
+                    font-weight: bold;
+                }
             }
+            
         }
+    }
+}
+
+@media(max-width: 768px) {
+    .header-class {
+        font-size: 0.7rem !important;
     }
 }
