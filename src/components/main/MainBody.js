@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './MainBody.scss'
+import { saveComplain } from '../../services/apiEndpoint';
 
 const MainBody = () => {
 
@@ -499,7 +500,7 @@ const MainBody = () => {
     const depComp = depList.map((item) => (<option key={item.id} value={item.id}>{item.name}</option>))
 
     const sucursalList = [
-        { id: 1, name: 'DIACO- BAJA VERAPAZ' },
+        { id: 1, name: 'BAJA VERAPAZ - DIACO' },
         { id: 2, name: 'CENTRAL' },
         { id: 3, name: 'CHIMALTENANGO - DIACO' },
         { id: 4, name: 'CHIQUIMULA - DIACO' },
@@ -542,20 +543,23 @@ const MainBody = () => {
 
         const postData = {
             name: name,
-            ras_soc: rsocial,
+            socialReason: rsocial,
             nit: nit,
+
             departamento: depValue,
-            municipio: muniSel,
+            idMunicipio: muniSel,
             address: dir,
-            office_phone: tel,
-            sucursal: suc,
-            invoice: factura,
-            date: fecha,
-            complain_text: complain,
-            request_text: sol,
+            officeNumber: tel,
+
+            idSede: suc,
+            invoiceId: factura,
+            complainDate: fecha,
+            complainText: complain,
+            requestText: sol,
         }
 
         console.log('post Data is ', postData);
+        savingComplain(postData)
 
         setName('')
         setRSocial('')
@@ -572,6 +576,11 @@ const MainBody = () => {
 
         setSectionOne(' ')
         handleSections()
+    }
+
+    const savingComplain =  async (postData) => {
+        const saveRes = await saveComplain(postData)
+        console.log('saveRes is', saveRes);
     }
 
     const [name, setName] = useState('')
