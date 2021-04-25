@@ -19,6 +19,15 @@ export const getReportOne = (from, to) => {
   return res
 }
 
+export const getDepos = () => {
+  const res = fetch(`http://${server}:8085/fomularioumg/api/quejaumg/dep`, {
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' },
+  })
+
+  return res
+}
 
 export const saveComplain = async (postData) => postComplain(postData)
 export const getReportByDates = async (from, to) => getReportOne(from, to)
+export const getDepList = async () => getDepos()
