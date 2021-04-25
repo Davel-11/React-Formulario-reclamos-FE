@@ -1,4 +1,5 @@
-const server = 'localhost'
+// 54.166.168.21
+const server = '54.166.168.21'
 
 export const postComplain = (postData) => {
     const res = fetch(`http://${server}:8085/fomularioumg/api/quejaumg/form`, {

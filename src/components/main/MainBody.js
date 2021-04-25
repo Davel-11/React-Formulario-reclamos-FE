@@ -143,6 +143,7 @@ const MainBody = () => {
     const savingComplain =  async (postData) => {
         const saveRes = await saveComplain(postData)
         console.log('saveRes is', saveRes);
+        setNot(<h2 className="noti">Formulario recibido exitosamente</h2>)
     }
 
     
@@ -162,10 +163,12 @@ const MainBody = () => {
     const [complain, setComplain] = useState('')
     const [sol, setSol] = useState('')
 
+    const [not, setNot] = useState(null)
+
     return (
         <main className="main-body">
             <h1>Formulario de Reclamos</h1>
-
+            {not}
             <form className="forma">
 
                 <div className={sectionOne}>
