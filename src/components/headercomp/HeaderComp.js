@@ -11,7 +11,7 @@ const HeaderComp = () => (
             <li><NavLink to="/">Inicio</NavLink></li>
             <li><NavLink to="/reports">Reportes</NavLink></li>
             <li><NavLink to="/site">Diseño de Sitio</NavLink></li>
-            <li><NavLink to="/student">Alumno</NavLink></li>
+            <li><NavLink to="/student">Repositorios</NavLink></li>
         </ul>
     </div>
 )

@@ -10,4 +10,35 @@
     overflow-y: auto;
     overflow-x: auto;
 
+    // background: cornflowerblue;
+
+    //padding: 50px;
+    
+
+    .in-site {
+        margin-top: 50px;
+        width: auto;
+        height: auto;
+        // background: lightblue;
+        .tecno {
+            height: 421px;
+            width: 669px;
+            background: url('../../assets/Diagrama-Casos-Uso-UMG-PF-Arquitectura.png');
+            background-size: cover;;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .aws {
+            margin-top: 50px;
+            height: 791px;
+            width: 778px;
+            background: url('../../assets/Diagrama-Casos-Uso-UMG-PF-AWS.png');
+            background-size: cover;;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-bottom: 50px;
+        }
+    }
+
 }
