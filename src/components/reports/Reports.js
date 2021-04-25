@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './Reports.scss'
 import { getReportByDates } from '../../services/apiEndpoint'
+import Graphs from './grafica/Graphs'
 
 const Reports = () => {
 
@@ -20,11 +21,15 @@ const Reports = () => {
     const [from, setFrom] = useState(new Date())
     const [to, setTo] = useState(new Date())
 
+    const [graphData, setGraphData] = useState(null)
+
     const [tableComp, setTableComp] = useState(null)
     const getByFechas = async () => {
         const reportResponse = await getReportByDates(from, to)
 
         reportResponse.json().then((resData) => {
+
+            setGraphData(resData)
 
             if (resData && resData.length > 0) {
                 setTableComp(
@@ -54,7 +59,7 @@ const Reports = () => {
             <div className="tabs">
                 <div className="tabs-title">
                     <h3 className="tab active-tab" onClick={() => handleTab(true)}>Reporte por Fechas</h3>
-                    <h3 className="tab" onClick={() => handleTab(false)}>Reporte por Regiones</h3>
+                    <h3 className="tab" onClick={() => handleTab(false)}>Grafica</h3>
                 </div>
 
                 <div className="tab-body">
@@ -91,7 +96,7 @@ const Reports = () => {
                     </div>
 
                     <div className={regionClass}>
-                        Region Componente
+                        <Graphs data={graphData} />
                     </div>
                 </div>
             </div>
