@@ -558,7 +558,6 @@ const MainBody = () => {
             requestText: sol,
         }
 
-        console.log('post Data is ', postData);
         savingComplain(postData)
 
         setName('')
@@ -630,7 +629,7 @@ const MainBody = () => {
                     
                     <h3>Contacto de Empresa</h3>
 
-                    <input className="input-type" type="text" placeholder="Teléfono" value={tel} onChange={(event) => setTel(event.target.value)} />
+                    <input className="input-type" type="number" placeholder="Teléfono" value={tel} onChange={(event) => setTel(event.target.value)} />
                                         
                     <h3>Sucursal</h3>
 
@@ -645,7 +644,7 @@ const MainBody = () => {
                 <div className={sectionSec}> 
                     <h3>Documentos de Empresa</h3>
 
-                    <input className="input-type" type="text" placeholder="Documento - No. de Factura" value={factura} onChange={(event) => setFacutra(event.target.value)} />
+                    <input className="input-type" type="number" placeholder="Documento - No. de Factura" value={factura} onChange={(event) => setFacutra(event.target.value)} />
 
                     <h3>Fecha</h3>
                     <input className="input-type" type="date" placeholder="Fecha" value={fecha} onChange={(event) => setFecha(event.target.value)} />

@@ -19,6 +19,11 @@
 
   overflow-x: unset;
   overflow-y: unset;
+  
+  h1, h2, h3, h4  {
+    margin: 0px;
+    margin-top: 5px;
+  }
 
   .in-main-app {
     overflow-x: unset;
